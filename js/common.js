@@ -1,10 +1,10 @@
 $(function() {
 
-	// var headerHeight = $('.header').height();
+	var headerHeight = $('.header').height();
 
 	$(window).scroll(function() {
 
-		if($(this).scrollTop() > 0){
+		if($(this).scrollTop() > headerHeight){
 			$('.header').addClass('header--fixed');
 
 		}else{
