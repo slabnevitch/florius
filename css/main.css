@@ -4670,3 +4670,9 @@ span.actions-price__old {
       display: block; } }
 
 /*# sourceMappingURL=maps/main.css.map */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   .product-item__title,
+   .product-item__descr{
+      width: 100%;
+   }
+}
