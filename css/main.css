@@ -6354,6 +6354,8 @@ span.actions-price__old {
 
 .header--fixed .constructor-step {
   margin-top: 0;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 .header--fixed .constructor-step__icon .icon {
@@ -6390,8 +6392,6 @@ span.actions-price__old {
 /* Medium Devices, Desktops */
 
 /* Large Devices, Wide Screens */
-
-/*# sourceMappingURL=maps/main.css.map */
 
 @media only screen and (min-width: 320px) {
   /**/
@@ -7877,3 +7877,4 @@ span.actions-price__old {
     flex: auto;
   }
 }
+/*# sourceMappingURL=maps/main.css.map */
