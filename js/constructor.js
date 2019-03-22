@@ -1,5 +1,11 @@
 $(function() {
 	$(document).ready(function() {
+
+		// revealator
+			
+		// end revealator
+
+
 		var $selects = $('.constructor-select')
 			$selects.each(function(ind, elem) {
 				$(elem).ikSelect({
@@ -248,48 +254,51 @@ $(function() {
 
 
 		 	// label text animation
-	 		function SplitLetters(selector, wrapper = "$", delimeter = "", joiner = "") {
-	 				console.log('split');
+		 	if($('.constructor-volume__adding .constructor-custom-label__text').length > 0){
+		 		function SplitLetters(selector, wrapper = "$", delimeter = "", joiner = "") {
+		 			console.log('split');
 
-		    	let nodeList = document.querySelectorAll(selector);
+		 			let nodeList = document.querySelectorAll(selector);
 
-		    	function parseLetters(node) {
-		    		let htmlNode = node.cloneNode();
-		    		htmlNode.innerHTML = "";
+		 			function parseLetters(node) {
+		 				let htmlNode = node.cloneNode();
+		 				htmlNode.innerHTML = "";
 
-		    		for (let i = 0; i < node.childNodes.length; i++) {
-		    			let childNode = node.childNodes[i];
-		    			if (childNode.nodeType === Node.TEXT_NODE) {
-		    				htmlNode.innerHTML += childNode.data 
-		    				.split(delimeter)
-		    				.map(function(letter) {
-		    					if (letter === " ") {
-		    						return letter;
-		    					}
-		    					else {
-		    						return wrapper.replace(/\$/g, letter);
-		    					}
-		    				})
-		    				.join(joiner);
-		    			}
-		    			else {
-		    				htmlNode.appendChild(parseLetters(childNode));
-		    			}
-		    		}
+		 				for (let i = 0; i < node.childNodes.length; i++) {
+		 					let childNode = node.childNodes[i];
+		 					if (childNode.nodeType === Node.TEXT_NODE) {
+		 						htmlNode.innerHTML += childNode.data 
+		 						.split(delimeter)
+		 						.map(function(letter) {
+		 							if (letter === " ") {
+		 								return letter;
+		 							}
+		 							else {
+		 								return wrapper.replace(/\$/g, letter);
+		 							}
+		 						})
+		 						.join(joiner);
+		 					}
+		 					else {
+		 						htmlNode.appendChild(parseLetters(childNode));
+		 					}
+		 				}
 
-		    		return htmlNode;
-		    	}
+		 				return htmlNode;
+		 			}
 
-		    	for (let i = 0; i < nodeList.length; i++) {
-		    		nodeList[i].innerHTML = parseLetters(nodeList[i]).innerHTML;
-		    	}
-		    }
+		 			for (let i = 0; i < nodeList.length; i++) {
+		 				nodeList[i].innerHTML = parseLetters(nodeList[i]).innerHTML;
+		 			}
+		 		}
 
-		    SplitLetters(".constructor-volume__adding .constructor-custom-label__text", "<span class=\"letter\">$</span>", "", "");
+		    	SplitLetters(".constructor-volume__adding .constructor-custom-label__text", "<span class=\"letter\">$</span>", "", "");
 				
 				var tl = new TimelineMax({repeat:-1,yoyo:true});
 
 				tl.staggerFromTo('.constructor-volume__adding .constructor-custom-label__text .letter', .5, {x:20, opacity: 0}, {x: 0, opacity: 1, yoyo: true}, 0.08);
+		 	}
+	 		
 
 				// end label text animation
 	});
