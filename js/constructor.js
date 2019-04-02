@@ -2,7 +2,7 @@ $(function() {
 	$(document).ready(function() {
 
 		// revealator
-			
+			Revealator.effects_padding = '-500';
 		// end revealator
 
 
