@@ -24,33 +24,33 @@ $(function() {
 				});
 			});
 
-			 $variantsSlider = $('.constructor-variants__slider');
+			//  $variantsSlider = $('.constructor-variants__slider');
 
-			var variantsSliderSettings = {
-				slidesToShow: 1,
-				arrows: false,
-				dots: false,
-				mobileFirst: true
-		    };
+			// var variantsSliderSettings = {
+			// 	slidesToShow: 1,
+			// 	arrows: false,
+			// 	dots: false,
+			// 	mobileFirst: true
+		 //    };
 
 
-			if(screen.width < 768){
-		    	$variantsSlider.slick(variantsSliderSettings);
-				// $variantsSlider.slick('unslick');
-			}
+			// if(screen.width < 768){
+		 //    	$variantsSlider.slick(variantsSliderSettings);
+			// 	// $variantsSlider.slick('unslick');
+			// }
 
-			$(window).resize(function() {
-				if ($(window).width() > 768) {
-					if ($variantsSlider.hasClass('slick-initialized')) {
-						$variantsSlider.slick('unslick');
-					}
-					return
-				}
+			// $(window).resize(function() {
+			// 	if ($(window).width() > 768) {
+			// 		if ($variantsSlider.hasClass('slick-initialized')) {
+			// 			$variantsSlider.slick('unslick');
+			// 		}
+			// 		return
+			// 	}
 
-				if (!$variantsSlider.hasClass('slick-initialized')) {
-					return $variantsSlider.slick(variantsSliderSettings);
-				}
-			});
+			// 	if (!$variantsSlider.hasClass('slick-initialized')) {
+			// 		return $variantsSlider.slick(variantsSliderSettings);
+			// 	}
+			// });
 
 
 			$('.constr-tooltip-button').tooltipster({
