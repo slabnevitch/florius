@@ -51,7 +51,77 @@ $(function() {
 			// 		return $variantsSlider.slick(variantsSliderSettings);
 			// 	}
 			// });
+	
+	$.widget( "custom.iconselectmenu", $.ui.selectmenu, {
+		_renderItem: function( ul, item ) {
+			var li = $( "<li>" ),
+			wrapper = $( "<div>", { text: item.label } );
 
+			if ( item.disabled ) {
+				li.addClass( "ui-state-disabled" );
+			}
+
+			$( "<span>", {
+				style: "background-color:" + item.value,
+				"class": "constructor-edit__color-sample " + item.element.attr( "data-class" )
+			})
+			.appendTo( wrapper );
+
+			return li.append( wrapper ).appendTo( ul );
+		}
+	});
+ 
+    $( ".constructor-edit__font-color select")
+      .iconselectmenu({
+      	create: function( event, ui ) {
+      		var $defaultFontColor = $('<span>', {
+      			class: 'constructor-edit__color-sample'
+      		});
+      		
+      		$(event.target).closest('.constructor-edit__font-color')
+      			.find('.ui-selectmenu-button')
+      			.append($defaultFontColor);
+      			
+			$(event.target).closest('.constructor-edit__font-color')
+	  			.find('.ui-selectmenu-button')
+	  			.find('.ui-selectmenu-text')
+	  			.remove();
+      	},
+
+      	change: function( event, ui ) {
+      		console.log($('#' + event.target.getAttribute('id') + '-menu').attr('id'));
+      		
+      		var $parentButton = $(event.target).closest('.constructor-edit__font-color')
+  				.find('.ui-selectmenu-button'),
+  				$currentSelectedItem = $('#' + event.target.getAttribute('id') + '-menu')
+	  				.find('.ui-menu-item')
+	  				.eq(ui.item.index),
+  				$colorSampleCopy = $currentSelectedItem
+  					.find('.constructor-edit__color-sample')
+  					.clone();
+			$parentButton
+				.find('.constructor-edit__color-sample')
+				.remove();
+
+			$parentButton.append($colorSampleCopy);
+
+      	}
+      })
+      .iconselectmenu( "menuWidget" )
+        .addClass( "ui-menu-icons" );
+
+    $( ".constructor-edit__font-family select" ).selectmenu({
+				width: 114
+		});
+
+		$( ".constructor-edit__font-size select" ).selectmenu({
+				width: 67,
+			 create: function( event, ui ) {
+			 	// console.log(event);
+			 	// console.log(ui);
+			 	// console.log(this);
+			 }
+		});
 
 			$('.constr-tooltip-button').tooltipster({
 				trigger: 'hover',
