@@ -131,7 +131,6 @@ $(function() {
 				minWidth: 147,
 				trackOrigin: true,
 				contentAsHTML: true,
-				contentAsHTML: true,
 				functionBefore: function() {
 					// if()
 				},
@@ -206,6 +205,20 @@ $(function() {
 					}
 					return position;
 				}
+
+			});
+
+			$('.recomendations-tooltip').tooltipster({
+				trigger: 'click',
+				side: 'bottom',
+				arrow: false,
+				interactive: true,
+				viewportAware: false,
+				trackOrigin: true,
+				contentAsHTML: true,
+				functionReady: function(instance, helper) {
+					helper.tooltip.classList.add('constr-reconmendations-tip');
+				},
 
 			});
 
