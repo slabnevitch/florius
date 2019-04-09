@@ -219,6 +219,17 @@ $(function() {
 				functionReady: function(instance, helper) {
 					helper.tooltip.classList.add('constr-reconmendations-tip');
 				},
+				functionPosition: function(instance, helper, position){
+					// position.coord.top = helper.origin.getBoundingClientRect().top + helper.origin.offsetWidth + 15;
+					position.coord.left = helper.origin.getBoundingClientRect().left;
+					
+					if($('.header').hasClass('header--fixed')){
+						// helper.tooltip.classList.add('info-tip--mobile');
+						var posYHelper = helper.origin.getBoundingClientRect().top;
+						position.coord.top = posYHelper - 30;
+					}
+					return position;
+				}
 
 			});
 
