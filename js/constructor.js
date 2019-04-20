@@ -239,6 +239,14 @@ $(function() {
 				}
 			});
 
+			// recomendations toggle
+				document.querySelector('.constructor-layout__rec-toggle').addEventListener('click', function() {
+					this.parentElement.parentElement.classList.toggle('active');
+					this.parentElement.parentElement.classList.contains('active') ? this.innerHTML = '&#10006;' : this.textContent = '+';
+
+				});
+			// end recomendations toggle
+
 			// layout edit
 			function Layout() {
 				var _self = this,

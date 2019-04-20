@@ -6270,6 +6270,11 @@ input.ui-button::-moz-focus-inner, button.ui-button::-moz-focus-inner {
 .constructor__step-2 {
   padding-top: 62px;
   padding-bottom: 170px; }
+  .constructor__step-2 .constructor-layouts {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
 
 .constructor-steps {
   display: -webkit-flex;
@@ -6605,6 +6610,7 @@ input.ui-button::-moz-focus-inner, button.ui-button::-moz-focus-inner {
   -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08); }
   .constructor-layout--recomendations .constructor-layout__rec-header {
+    position: relative;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -6617,11 +6623,25 @@ input.ui-button::-moz-focus-inner, button.ui-button::-moz-focus-inner {
     -ms-flex-align: center;
     align-items: center;
     margin-bottom: 15px; }
+  .constructor-layout--recomendations .constructor-layout__rec-toggle {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer; }
   .constructor-layout--recomendations .constructor-layout__rec-title {
     margin-left: 12px;
     font-size: 18px;
     font-family: "RobotoBold", sans-serif;
     color: #000; }
+  .constructor-layout--recomendations .constructor-layout__rec-list {
+    display: none; }
+  .constructor-layout--recomendations.active .constructor-layout__rec-list {
+    display: block; }
 
 .constructor-recomenations-mob {
   display: none;
