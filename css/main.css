@@ -6643,6 +6643,8 @@ input.ui-button::-moz-focus-inner, button.ui-button::-moz-focus-inner {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08); }
   .constructor-recomendations.active .constructor-layout__rec-list {
     display: block; }
+  .constructor-recomendations.active .constructor-layout__rec-toggle {
+    font-size: 16px; }
 
 .constructor-recomenations-mob {
   display: none;
