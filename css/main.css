@@ -6623,7 +6623,11 @@ input.ui-button::-moz-focus-inner, button.ui-button::-moz-focus-inner {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     font-size: 24px;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
   .constructor-layout--recomendations .constructor-layout__rec-title {
     margin-left: 12px;
     font-size: 18px;
